@@ -9,12 +9,11 @@
 #import "DAPurchaseViewController.h"
 #import "DAPurchaseViewCell.h"
 #import "DAHelper.h"
+#import "DALoginViewController.h"
 
 @interface DAPurchaseViewController ()
 {
     NSArray *items;
-    NSArray *amounts;
-    NSArray *units;
 }
 
 @end
@@ -24,12 +23,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    items = [NSArray arrayWithObjects:@"螃蟹", @"韭菜", @"大料", @"色拉油", @"白菜", @"螃蟹", @"韭菜", @"大料", @"色拉油", @"白菜", @"螃蟹", @"韭菜", @"大料", @"色拉油", @"白菜", nil];
-    amounts = [NSArray arrayWithObjects:@"100", @"5", @"30", @"2,000", @"100", @"100", @"5", @"30", @"2,000", @"100", @"100", @"5", @"30", @"2,000", @"100", nil];
-    units = [NSArray arrayWithObjects:@"公斤", @"公斤", @"公斤", @"桶", @"颗", @"公斤", @"公斤", @"公斤", @"桶", @"颗", @"公斤", @"公斤", @"公斤", @"桶", @"颗", nil];
-    
+
     self.barCurrent.title = [DAHelper getDayString:[NSDate date]];
+
+    // 当前用户有效，则获取数据
+    if ([DAHelper getCurrentUser] != nil) {
+        [self getPurchaseData];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    // 如果没有登陆，显示登陆画面
+    if ([DAHelper getCurrentUser] == nil) {
+        DALoginViewController *loginViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"DALoginViewController"];
+        [loginViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+        [loginViewController setDidFinashLogin:^{
+            [self getPurchaseData];
+        }];
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+
+}
+
+- (void)getPurchaseData
+{
+    [[DAPurchaseModule alloc] getByDate:self.barCurrent.title callback:^(NSError *error, DAPurchase *daily){
+        items = daily.items;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,12 +81,13 @@
         cell = [[DAPurchaseViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
+    DAPurchaseItem *item = [items objectAtIndex:indexPath.row];
     
     cell.lblNo.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
-    cell.lblName.text = [items objectAtIndex:indexPath.row];
-    cell.lblAmount.text = [amounts objectAtIndex:indexPath.row];
-    cell.lblUnit.text = [units objectAtIndex:indexPath.row];
-    cell.lblPhone.text = @"186-1234-5678";
+    cell.lblName.text = item.name;
+    cell.lblAmount.text = item.amount;
+    cell.lblUnit.text = item.unit;
+    cell.lblPhone.text = item.providerPhone1;
     
     cell.contentView.backgroundColor = [UIColor colorWithHue:0.21
                                                   saturation:0.09
@@ -119,7 +144,18 @@
 - (IBAction)onType4Touched:(id)sender
 {
 }
+
 - (IBAction)onCompliteTouched:(id)sender
 {
+    DAPurchase *purchase = [[DAPurchase alloc] init];
+    purchase.date = self.barCurrent.title;
+    
+    DAPurchaseItem *item = [[DAPurchaseItem alloc] init];
+    item.amount = @"12345";
+    item.name = @"lalala";
+    purchase.items = [[NSArray alloc] initWithObjects:item, nil];
+
+    [[DAPurchaseModule alloc]update:purchase callback:^(NSError *error, DAPurchase *daily){}];
+//    [[DAPurchaseModule alloc]add:purchase callback:^(NSError *error, DAPurchase *daily){}];
 }
 @end

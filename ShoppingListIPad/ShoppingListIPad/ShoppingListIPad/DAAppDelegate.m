@@ -7,12 +7,23 @@
 //
 
 #import "DAAppDelegate.h"
+#import <TribeSDK/TribeSDKHeader.h>
+
+#define kInfoPlistKeyServerAddress @"ServerAddress"
+#define kInfoPlistKeyServerPort @"ServerPort"
 
 @implementation DAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // 设定缺省的服务器地址
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kServerAddress] == nil) {
+        NSString *serverAddress = [[NSBundle mainBundle] objectForInfoDictionaryKey:kInfoPlistKeyServerAddress];
+        NSNumber *serverPort = [[NSBundle mainBundle] objectForInfoDictionaryKey:kInfoPlistKeyServerPort];
+        [[NSUserDefaults standardUserDefaults] setObject:serverAddress forKey:kServerAddress];
+        [[NSUserDefaults standardUserDefaults] setInteger:serverPort.integerValue forKey:kServerPort];
+    }
+
     return YES;
 }
 							

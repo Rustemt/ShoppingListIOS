@@ -50,7 +50,7 @@
                                             <action selector="onType4Touched:" destination="RzY-uF-8su" id="V4R-xA-os9"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="22" style="plain" systemItem="fixedSpace" id="pFp-HC-0NB"/>
+                                    <barButtonItem width="22" style="plain" systemItem="fixedSpace" id="gTO-v9-FUv"/>
                                     <barButtonItem title="查看汇总" id="s2b-KY-0Y2">
                                         <connections>
                                             <segue destination="Uqf-91-zrh" kind="modal" id="4v9-IZ-N8p"/>
@@ -59,6 +59,12 @@
                                     <barButtonItem title="添加明细" id="6VA-74-SP7">
                                         <connections>
                                             <segue destination="3Eh-Ck-b07" kind="modal" modalPresentationStyle="formSheet" id="IEz-CX-rud"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="22" style="plain" systemItem="fixedSpace" id="pFp-HC-0NB"/>
+                                    <barButtonItem title="登陆" id="PQr-vm-cwj">
+                                        <connections>
+                                            <segue destination="8cy-J5-hvJ" kind="modal" modalPresentationStyle="formSheet" id="W3Z-2M-Bge"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -874,6 +880,117 @@
             </objects>
             <point key="canvasLocation" x="2411" y="-144"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hyT-WM-arE">
+            <objects>
+                <viewController storyboardIdentifier="DALoginViewController" id="8cy-J5-hvJ" customClass="DALoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EYB-x3-ugR">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="l_li@dreamarts.co.jp" borderStyle="roundedRect" placeholder="l_li@dreamarts.co.jp" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-M5-FdM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="K8E-ld-W5w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hia-h2-mT9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="bfT-Zy-S0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="l_li" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGR-bV-7Zj">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-6d-mtT">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYN-Yt-yva">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="7lL-cY-27u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="登陆">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLoginTouched:" destination="8cy-J5-hvJ" eventType="touchUpInside" id="25w-Q0-LNv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gy-gt-hOM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="xtg-Fu-LSx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="注销">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogoutTouched:" destination="8cy-J5-hvJ" eventType="touchUpInside" id="rVF-38-GpV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-lD-Agg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="8uB-Cc-5Uu"/>
+                                    <constraint firstAttribute="height" constant="29" id="M1g-ol-Maw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WJt-6d-mtT" firstAttribute="leading" secondItem="hia-h2-mT9" secondAttribute="leading" type="default" id="GJQ-wy-Mwa"/>
+                            <constraint firstItem="U8n-M5-FdM" firstAttribute="leading" secondItem="hia-h2-mT9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Iq2-nn-RtZ"/>
+                            <constraint firstItem="uGR-bV-7Zj" firstAttribute="leading" secondItem="tG7-lD-Agg" secondAttribute="leading" type="default" id="JY1-vh-y4B"/>
+                            <constraint firstItem="1gy-gt-hOM" firstAttribute="bottom" secondItem="tG7-lD-Agg" secondAttribute="bottom" type="default" id="NI0-GR-pD6"/>
+                            <constraint firstItem="uGR-bV-7Zj" firstAttribute="trailing" secondItem="U8n-M5-FdM" secondAttribute="trailing" type="default" id="NXC-gx-nc9"/>
+                            <constraint firstItem="uGR-bV-7Zj" firstAttribute="top" secondItem="U8n-M5-FdM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OUO-TX-3JN"/>
+                            <constraint firstItem="uGR-bV-7Zj" firstAttribute="leading" secondItem="WJt-6d-mtT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="QvK-ew-ST4"/>
+                            <constraint firstItem="WJt-6d-mtT" firstAttribute="top" secondItem="EYB-x3-ugR" secondAttribute="top" constant="173" id="REX-eR-UfG"/>
+                            <constraint firstItem="1gy-gt-hOM" firstAttribute="top" secondItem="AYN-Yt-yva" secondAttribute="top" type="default" id="TEV-yh-yzA"/>
+                            <constraint firstItem="U8n-M5-FdM" firstAttribute="top" secondItem="EYB-x3-ugR" secondAttribute="top" constant="131" id="Wqy-cv-4kl"/>
+                            <constraint firstAttribute="trailing" secondItem="1gy-gt-hOM" secondAttribute="trailing" constant="194" id="bPr-5i-wwj"/>
+                            <constraint firstItem="tG7-lD-Agg" firstAttribute="top" secondItem="EYB-x3-ugR" secondAttribute="top" constant="238" id="ccB-kq-4WP"/>
+                            <constraint firstItem="hia-h2-mT9" firstAttribute="leading" secondItem="EYB-x3-ugR" secondAttribute="leading" constant="89" id="dei-fp-7fS"/>
+                            <constraint firstAttribute="trailing" secondItem="AYN-Yt-yva" secondAttribute="trailing" constant="114" id="lEg-j1-WIx"/>
+                            <constraint firstItem="uGR-bV-7Zj" firstAttribute="leading" secondItem="U8n-M5-FdM" secondAttribute="leading" type="default" id="lmz-sG-jSb"/>
+                            <constraint firstItem="hia-h2-mT9" firstAttribute="top" secondItem="EYB-x3-ugR" secondAttribute="top" constant="135" id="mO4-3W-rW3"/>
+                            <constraint firstItem="1gy-gt-hOM" firstAttribute="top" secondItem="tG7-lD-Agg" secondAttribute="top" type="default" id="muI-Pj-IEi"/>
+                            <constraint firstItem="1gy-gt-hOM" firstAttribute="bottom" secondItem="AYN-Yt-yva" secondAttribute="bottom" type="default" id="rS9-Qv-z67"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="uGR-bV-7Zj" id="Hq8-HN-je4"/>
+                        <outlet property="txtUserId" destination="U8n-M5-FdM" id="kep-mK-5gJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fal-o7-INy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2411" y="570"/>
+        </scene>
     </scenes>
     <resources>
         <image name="117-todo.png" width="18" height="19"/>
@@ -881,6 +998,81 @@
         <image name="line_h.png" width="2" height="994"/>
         <image name="purchase_list_sample2.jpeg" width="275" height="183"/>
     </resources>
+    <classes>
+        <class className="DAItemListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DAItemListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="itemListViewReturnActionForSegue:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="DALoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DALoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnLoginTouched:"/>
+                <relationship kind="action" name="btnLogoutTouched:"/>
+                <relationship kind="outlet" name="txtPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUserId" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DAPurchaseListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DAPurchaseListViewController.h"/>
+        </class>
+        <class className="DAPurchaseViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DAPurchaseViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblAmount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblPhone" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblUnit" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DAPurchaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DAPurchaseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onCompliteTouched:"/>
+                <relationship kind="action" name="onCurrentTouched:"/>
+                <relationship kind="action" name="onNextTouched:"/>
+                <relationship kind="action" name="onPrevTouched:"/>
+                <relationship kind="action" name="onType1Touched:"/>
+                <relationship kind="action" name="onType2Touched:"/>
+                <relationship kind="action" name="onType3Touched:"/>
+                <relationship kind="action" name="onType4Touched:"/>
+                <relationship kind="action" name="purchaseViewReturnActionForSegue:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="barCurrent" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblProviderDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="lblProviderName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProviderPhone1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblProviderPhone2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DATotalViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATotalViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblCol1Count" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol1Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol1No" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol2Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol3Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol3No" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblCol4Name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DATotalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DATotalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onCancelTouched:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

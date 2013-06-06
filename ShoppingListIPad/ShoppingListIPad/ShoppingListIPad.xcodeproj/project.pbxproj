@@ -46,6 +46,8 @@
 		F2DDCEC2175CCAD4000E1046 /* DATotalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEB5175CCAC6000E1046 /* DATotalViewCell.m */; };
 		F2DDCEC3175CCAD4000E1046 /* DATotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEB7175CCAC6000E1046 /* DATotalViewController.m */; };
 		F2DDCEC4175CCBF0000E1046 /* DAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCE9D175CCA6E000E1046 /* DAHelper.m */; };
+		F2DDCEC7175DFE15000E1046 /* DALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */; };
+		F2DDCEC8175DFF24000E1046 /* DALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		F2DDCEB5175CCAC6000E1046 /* DATotalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATotalViewCell.m; sourceTree = "<group>"; };
 		F2DDCEB6175CCAC6000E1046 /* DATotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATotalViewController.h; sourceTree = "<group>"; };
 		F2DDCEB7175CCAC6000E1046 /* DATotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATotalViewController.m; sourceTree = "<group>"; };
+		F2DDCEC5175DFE15000E1046 /* DALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALoginViewController.h; sourceTree = "<group>"; };
+		F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 		F2DDCE61175CC9ED000E1046 /* ShoppingListIPad */ = {
 			isa = PBXGroup;
 			children = (
+				F2DDCEC5175DFE15000E1046 /* DALoginViewController.h */,
+				F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */,
 				F2DDCEAC175CCAC6000E1046 /* DAItemListViewController.h */,
 				F2DDCEAD175CCAC6000E1046 /* DAItemListViewController.m */,
 				F2DDCEAE175CCAC6000E1046 /* DAPurchaseListViewController.h */,
@@ -357,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DDCEC8175DFF24000E1046 /* DALoginViewController.m in Sources */,
 				F2DDCEC4175CCBF0000E1046 /* DAHelper.m in Sources */,
 				F2DDCEBE175CCAD4000E1046 /* DAItemListViewController.m in Sources */,
 				F2DDCEBF175CCAD4000E1046 /* DAPurchaseListViewController.m in Sources */,
@@ -382,6 +389,7 @@
 				F2DDCEBB175CCAC7000E1046 /* DAPurchaseViewController.m in Sources */,
 				F2DDCEBC175CCAC7000E1046 /* DATotalViewCell.m in Sources */,
 				F2DDCEBD175CCAC7000E1046 /* DATotalViewController.m in Sources */,
+				F2DDCEC7175DFE15000E1046 /* DALoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +499,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShoppingListIPad/ShoppingListIPad-Prefix.pch";
 				INFOPLIST_FILE = "ShoppingListIPad/ShoppingListIPad-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -507,6 +517,7 @@
 				GCC_PREFIX_HEADER = "ShoppingListIPad/ShoppingListIPad-Prefix.pch";
 				INFOPLIST_FILE = "ShoppingListIPad/ShoppingListIPad-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -564,6 +575,7 @@
 				F2DDCE92175CC9ED000E1046 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2DDCE93175CC9ED000E1046 /* Build configuration list for PBXNativeTarget "ShoppingListIPadTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +584,7 @@
 				F2DDCE95175CC9ED000E1046 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
