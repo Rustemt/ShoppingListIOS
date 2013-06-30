@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TribeSDK/TribeSDKHeader.h>
+
+typedef void (^AddRowDidTouched)(NSArray *selectedItem);
 
 @interface DAItemListViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)onSelectTouched:(id)sender;
+
+@property (strong, nonatomic) AddRowDidTouched didSelectedBlocks;
 
 @end

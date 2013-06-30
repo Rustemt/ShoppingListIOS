@@ -10,10 +10,14 @@
 #import "DAPurchaseViewCell.h"
 #import "DAHelper.h"
 #import "DALoginViewController.h"
+#import "DAItemListViewController.h"
 
 @interface DAPurchaseViewController ()
 {
-    NSArray *items;
+    NSMutableArray *items1;
+    NSMutableArray *items2;
+    NSMutableArray *items3;
+    NSMutableArray *items4;
 }
 
 @end
@@ -45,21 +49,14 @@
         }];
         [self presentViewController:loginViewController animated:YES completion:nil];
     }
-
 }
 
 - (void)getPurchaseData
 {
-    [[DAPurchaseModule alloc] getByDate:self.barCurrent.title callback:^(NSError *error, DAPurchase *daily){
-        items = daily.items;
+    [[DAPurchaseModule alloc] getByDate:self.barCurrent.title callback:^(NSError *error, DAPurchaseList *daily){
+        items1 = [[NSMutableArray alloc] initWithArray:daily.items];
         [self.tableView reloadData];
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -69,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return items.count;
+    return items1.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,7 +78,7 @@
         cell = [[DAPurchaseViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    DAPurchaseItem *item = [items objectAtIndex:indexPath.row];
+    DAPurchase *item = [items1 objectAtIndex:indexPath.row];
     
     cell.lblNo.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
     cell.lblName.text = item.name;
@@ -150,12 +147,50 @@
     DAPurchase *purchase = [[DAPurchase alloc] init];
     purchase.date = self.barCurrent.title;
     
-    DAPurchaseItem *item = [[DAPurchaseItem alloc] init];
+    DAPurchase *item = [[DAPurchase alloc] init];
     item.amount = @"12345";
     item.name = @"lalala";
-    purchase.items = [[NSArray alloc] initWithObjects:item, nil];
+    
+    [[DAPurchaseModule alloc]add:purchase callback:^(NSError *error, DAPurchase *daily){
+        NSLog(@"asdfad");
+    }];
 
-    [[DAPurchaseModule alloc]update:purchase callback:^(NSError *error, DAPurchase *daily){}];
-//    [[DAPurchaseModule alloc]add:purchase callback:^(NSError *error, DAPurchase *daily){}];
+//    [[DAPurchaseModule alloc]update:purchase callback:^(NSError *error, DAPurchase *daily){
+//        NSLog(@"asdfad");
+//    }];
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // 获取Controller
+    UINavigationController *navigation = (UINavigationController *)[segue destinationViewController];;
+    DAItemListViewController *itemListViewController = (DAItemListViewController *)[[navigation viewControllers] lastObject];
+
+    // 设定选择回调块
+    itemListViewController.didSelectedBlocks = ^(NSArray *items){
+        
+        __block NSInteger updateIndex = 0;
+
+        // 保存到数据库
+        DAPurchaseModule *module = [DAPurchaseModule alloc];
+        for (NSInteger i = 0; i < items.count; i++) {
+
+            // 设定分类
+            DAPurchase *object = [items objectAtIndex:i];
+            object.category = @"1";
+            [module add:object callback:^(NSError *error, DAPurchase *daily){
+                NSLog(@"add ok");
+                updateIndex = updateIndex + 1;
+                
+                // 全部更新完，刷新画面
+                if (updateIndex >= items.count) {
+                    [items1 addObjectsFromArray:items];
+                    [self.tableView reloadData];
+                }
+            }];
+        }
+    };
+
+}
+
 @end

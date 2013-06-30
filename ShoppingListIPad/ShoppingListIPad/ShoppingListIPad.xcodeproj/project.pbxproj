@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F22CA298177E7C5500415341 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F22CA297177E7C5500415341 /* logo.jpg */; };
+		F22CA29B177EBEE000415341 /* DAItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22CA29A177EBEE000415341 /* DAItemDetailViewController.m */; };
+		F2C1DDCB177ED5800050F6B6 /* DAItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C1DDCA177ED5800050F6B6 /* DAItemListCell.m */; };
 		F2DDCE5C175CC9ED000E1046 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DDCE5B175CC9ED000E1046 /* UIKit.framework */; };
 		F2DDCE5E175CC9ED000E1046 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DDCE5D175CC9ED000E1046 /* Foundation.framework */; };
 		F2DDCE60175CC9ED000E1046 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DDCE5F175CC9ED000E1046 /* CoreGraphics.framework */; };
@@ -32,7 +35,6 @@
 		F2DDCEA8175CCA7D000E1046 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DDCEA2175CCA7D000E1046 /* 83-calendar.png */; };
 		F2DDCEA9175CCA7D000E1046 /* line_h.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DDCEA3175CCA7D000E1046 /* line_h.png */; };
 		F2DDCEAA175CCA7D000E1046 /* purchase_list_sample.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DDCEA4175CCA7D000E1046 /* purchase_list_sample.png */; };
-		F2DDCEAB175CCA7D000E1046 /* purchase_list_sample2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F2DDCEA5175CCA7D000E1046 /* purchase_list_sample2.jpeg */; };
 		F2DDCEB8175CCAC7000E1046 /* DAItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEAD175CCAC6000E1046 /* DAItemListViewController.m */; };
 		F2DDCEB9175CCAC7000E1046 /* DAPurchaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEAF175CCAC6000E1046 /* DAPurchaseListViewController.m */; };
 		F2DDCEBA175CCAC7000E1046 /* DAPurchaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DDCEB1175CCAC6000E1046 /* DAPurchaseViewCell.m */; };
@@ -61,6 +63,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F22CA297177E7C5500415341 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		F22CA299177EBEE000415341 /* DAItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAItemDetailViewController.h; sourceTree = "<group>"; };
+		F22CA29A177EBEE000415341 /* DAItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAItemDetailViewController.m; sourceTree = "<group>"; };
+		F2C1DDC9177ED5800050F6B6 /* DAItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAItemListCell.h; sourceTree = "<group>"; };
+		F2C1DDCA177ED5800050F6B6 /* DAItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAItemListCell.m; sourceTree = "<group>"; };
 		F2DDCE58175CC9ED000E1046 /* ShoppingListIPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingListIPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DDCE5B175CC9ED000E1046 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F2DDCE5D175CC9ED000E1046 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,9 +78,9 @@
 		F2DDCE69175CC9ED000E1046 /* ShoppingListIPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingListIPad-Prefix.pch"; sourceTree = "<group>"; };
 		F2DDCE6A175CC9ED000E1046 /* DAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAAppDelegate.h; sourceTree = "<group>"; };
 		F2DDCE6B175CC9ED000E1046 /* DAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DAAppDelegate.m; sourceTree = "<group>"; };
-		F2DDCE6D175CC9ED000E1046 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F2DDCE6F175CC9ED000E1046 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F2DDCE71175CC9ED000E1046 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F2DDCE6D175CC9ED000E1046 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		F2DDCE6F175CC9ED000E1046 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		F2DDCE71175CC9ED000E1046 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		F2DDCE74175CC9ED000E1046 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F2DDCE76175CC9ED000E1046 /* DAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAViewController.h; sourceTree = "<group>"; };
 		F2DDCE77175CC9ED000E1046 /* DAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DAViewController.m; sourceTree = "<group>"; };
@@ -93,7 +100,6 @@
 		F2DDCEA2175CCA7D000E1046 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		F2DDCEA3175CCA7D000E1046 /* line_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_h.png; sourceTree = "<group>"; };
 		F2DDCEA4175CCA7D000E1046 /* purchase_list_sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purchase_list_sample.png; sourceTree = "<group>"; };
-		F2DDCEA5175CCA7D000E1046 /* purchase_list_sample2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = purchase_list_sample2.jpeg; sourceTree = "<group>"; };
 		F2DDCEAC175CCAC6000E1046 /* DAItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAItemListViewController.h; sourceTree = "<group>"; };
 		F2DDCEAD175CCAC6000E1046 /* DAItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAItemListViewController.m; sourceTree = "<group>"; };
 		F2DDCEAE175CCAC6000E1046 /* DAPurchaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPurchaseListViewController.h; sourceTree = "<group>"; };
@@ -173,20 +179,24 @@
 		F2DDCE61175CC9ED000E1046 /* ShoppingListIPad */ = {
 			isa = PBXGroup;
 			children = (
-				F2DDCEC5175DFE15000E1046 /* DALoginViewController.h */,
-				F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */,
-				F2DDCEAC175CCAC6000E1046 /* DAItemListViewController.h */,
-				F2DDCEAD175CCAC6000E1046 /* DAItemListViewController.m */,
-				F2DDCEAE175CCAC6000E1046 /* DAPurchaseListViewController.h */,
-				F2DDCEAF175CCAC6000E1046 /* DAPurchaseListViewController.m */,
-				F2DDCEB0175CCAC6000E1046 /* DAPurchaseViewCell.h */,
-				F2DDCEB1175CCAC6000E1046 /* DAPurchaseViewCell.m */,
 				F2DDCEB2175CCAC6000E1046 /* DAPurchaseViewController.h */,
 				F2DDCEB3175CCAC6000E1046 /* DAPurchaseViewController.m */,
+				F2DDCEB0175CCAC6000E1046 /* DAPurchaseViewCell.h */,
+				F2DDCEB1175CCAC6000E1046 /* DAPurchaseViewCell.m */,
+				F2DDCEAC175CCAC6000E1046 /* DAItemListViewController.h */,
+				F2DDCEAD175CCAC6000E1046 /* DAItemListViewController.m */,
+				F2C1DDC9177ED5800050F6B6 /* DAItemListCell.h */,
+				F2C1DDCA177ED5800050F6B6 /* DAItemListCell.m */,
+				F22CA299177EBEE000415341 /* DAItemDetailViewController.h */,
+				F22CA29A177EBEE000415341 /* DAItemDetailViewController.m */,
+				F2DDCEAE175CCAC6000E1046 /* DAPurchaseListViewController.h */,
+				F2DDCEAF175CCAC6000E1046 /* DAPurchaseListViewController.m */,
 				F2DDCEB4175CCAC6000E1046 /* DATotalViewCell.h */,
 				F2DDCEB5175CCAC6000E1046 /* DATotalViewCell.m */,
 				F2DDCEB6175CCAC6000E1046 /* DATotalViewController.h */,
 				F2DDCEB7175CCAC6000E1046 /* DATotalViewController.m */,
+				F2DDCEC5175DFE15000E1046 /* DALoginViewController.h */,
+				F2DDCEC6175DFE15000E1046 /* DALoginViewController.m */,
 				F2DDCE9F175CCA7D000E1046 /* Images */,
 				F2DDCE9C175CCA6E000E1046 /* DAHelper.h */,
 				F2DDCE9D175CCA6E000E1046 /* DAHelper.m */,
@@ -207,9 +217,6 @@
 				F2DDCE64175CC9ED000E1046 /* InfoPlist.strings */,
 				F2DDCE67175CC9ED000E1046 /* main.m */,
 				F2DDCE69175CC9ED000E1046 /* ShoppingListIPad-Prefix.pch */,
-				F2DDCE6D175CC9ED000E1046 /* Default.png */,
-				F2DDCE6F175CC9ED000E1046 /* Default@2x.png */,
-				F2DDCE71175CC9ED000E1046 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,12 +243,15 @@
 		F2DDCE9F175CCA7D000E1046 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F2DDCE6D175CC9ED000E1046 /* Default.png */,
+				F2DDCE6F175CC9ED000E1046 /* Default@2x.png */,
+				F2DDCE71175CC9ED000E1046 /* Default-568h@2x.png */,
+				F22CA297177E7C5500415341 /* logo.jpg */,
 				F2DDCEA0175CCA7D000E1046 /* 117-todo.png */,
 				F2DDCEA1175CCA7D000E1046 /* 138-scales.png */,
 				F2DDCEA2175CCA7D000E1046 /* 83-calendar.png */,
 				F2DDCEA3175CCA7D000E1046 /* line_h.png */,
 				F2DDCEA4175CCA7D000E1046 /* purchase_list_sample.png */,
-				F2DDCEA5175CCA7D000E1046 /* purchase_list_sample2.jpeg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -328,7 +338,7 @@
 				F2DDCEA8175CCA7D000E1046 /* 83-calendar.png in Resources */,
 				F2DDCEA9175CCA7D000E1046 /* line_h.png in Resources */,
 				F2DDCEAA175CCA7D000E1046 /* purchase_list_sample.png in Resources */,
-				F2DDCEAB175CCA7D000E1046 /* purchase_list_sample2.jpeg in Resources */,
+				F22CA298177E7C5500415341 /* logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +384,8 @@
 				F2DDCE68175CC9ED000E1046 /* main.m in Sources */,
 				F2DDCE6C175CC9ED000E1046 /* DAAppDelegate.m in Sources */,
 				F2DDCE78175CC9ED000E1046 /* DAViewController.m in Sources */,
+				F22CA29B177EBEE000415341 /* DAItemDetailViewController.m in Sources */,
+				F2C1DDCB177ED5800050F6B6 /* DAItemListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
