@@ -8,34 +8,45 @@
 
 #import "DATotalViewController.h"
 #import "DATotalViewCell.h"
+#import "DAHelper.h"
 
 @interface DATotalViewController ()
 {
-    NSArray *thePurchase;
+    NSMutableArray *items1;
+    NSMutableArray *items2;
+    NSMutableArray *items3;
+    NSMutableArray *items4;
 }
 @end
 
 @implementation DATotalViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    items1 = [[NSMutableArray alloc] initWithObjects: nil];
+    items2 = [[NSMutableArray alloc] initWithObjects: nil];
+    items3 = [[NSMutableArray alloc] initWithObjects: nil];
+    items4 = [[NSMutableArray alloc] initWithObjects: nil];
+    
+    // 按Category分类数据
+    for (DAPurchase *purchase in self.items) {
+        switch ([purchase.category integerValue]) {
+            case TypeCategoryType1:
+                [items1 addObject:purchase];
+                break;
+            case TypeCategoryType2:
+                [items2 addObject:purchase];
+                break;
+            case TypeCategoryType3:
+                [items3 addObject:purchase];
+                break;
+            case TypeCategoryType4:
+                [items4 addObject:purchase];
+                break;
+        }
+    }
 }
 
 - (IBAction)onCancelTouched:(id)sender
@@ -51,7 +62,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 50;//thePurchase.count;
+    // 返回最大行数
+    NSInteger maxcount = items1.count;
+    if (items2.count > maxcount) {
+        maxcount = items2.count;
+    }
+    if (items3.count > maxcount) {
+        maxcount = items3.count;
+    }
+    if (items4.count > maxcount) {
+        maxcount = items4.count;
+    }
+    
+    return maxcount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,34 +88,40 @@
     
     cell.lblCol1No.text = [NSString stringWithFormat:@"%02d", indexPath.row + 1];
     cell.lblCol3No.text = [NSString stringWithFormat:@"%02d", indexPath.row + 1];
-    if (indexPath.row == 0) {
-        cell.lblCol1Name.text = @"肉类";
-        cell.lblCol2Name.text = @"蔬菜";
-        cell.lblCol3Name.text = @"作料";
-        cell.lblCol4Name.text = @"海鲜";
-        cell.backgroundColor = [UIColor grayColor];
+
+    if (items1.count > 0) {
+        DAPurchase *col1 = [items1 objectAtIndex:indexPath.row];
+        cell.lblCol1Name.text = col1.name;
+        cell.lblCol1Amount.text = col1.amount;
+        cell.lblCol1Unit.text = col1.unit;
+        cell.lblCol1Order.text = col1.order;
+    }
+
+    if (items2.count > 0) {
+        DAPurchase *col2 = [items2 objectAtIndex:indexPath.row];
+        cell.lblCol2Name.text = col2.name;
+        cell.lblCol2Amount.text = col2.amount;
+        cell.lblCol2Unit.text = col2.unit;
+        cell.lblCol2Order.text = col2.order;
+    }
+
+    if (items3.count > 0) {
+        DAPurchase *col3 = [items3 objectAtIndex:indexPath.row];
+        cell.lblCol2Name.text = col3.name;
+        cell.lblCol2Amount.text = col3.amount;
+        cell.lblCol2Unit.text = col3.unit;
+        cell.lblCol2Order.text = col3.order;
+    }
+
+    if (items4.count > 0) {
+        DAPurchase *col4 = [items4 objectAtIndex:indexPath.row];
+        cell.lblCol2Name.text = col4.name;
+        cell.lblCol2Amount.text = col4.amount;
+        cell.lblCol2Unit.text = col4.unit;
+        cell.lblCol2Order.text = col4.order;
     }
     
-//    if (indexPath.row == 0) {
-//        cell.imgCategory.image = [UIImage imageNamed:@"142-wine-bottle.png"];
-//    }
-//    if (indexPath.row == 1) {
-//        cell.imgCategory.image = [UIImage imageNamed:@"125-food.png"];
-//    }
-//    if (indexPath.row == 2) {
-//        cell.imgCategory.image = [UIImage imageNamed:@"88-beer-mug.png"];
-//    }
-//    if (indexPath.row == 3) {
-//        cell.imgCategory.image = [UIImage imageNamed:@"144-martini.png"];
-//    }
-//    
-//    DACategoryItem *item = [theCategory objectAtIndex:indexPath.row];
-//    cell.lblName.text = item.name;
-//    cell.txtAmount.text = @"0";
-//    cell.txtAmount.inputView = dummyKeyboardView; // 不显示键盘
-//    [cell.txtAmount addTarget:self action:@selector(amountEditingDidBegin:) forControlEvents:UIControlEventEditingDidBegin];
-//    [cell.txtAmount addTarget:self action:@selector(amountEditingDidEnd:) forControlEvents:UIControlEventEditingDidEnd];
-    
+    cell.backgroundColor = [UIColor grayColor];
     return cell;
 }
 

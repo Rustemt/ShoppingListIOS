@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TribeSDK/TribeSDKHeader.h>
 
 @interface DATotalViewController : UIViewController
-- (IBAction)onCancelTouched:(id)sender;
+
+@property (retain, nonatomic) NSArray *items;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)onCancelTouched:(id)sender;
 
 @end
